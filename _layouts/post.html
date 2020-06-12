@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<div class="post-wrapper">
+  
+  <div class="article-header">
+    <h2>{{ page.title | escape }}</h2>
+    <p>
+      {% if page.author %}
+        {{ page.author }}
+      {% endif %}
+      • Publié le
+      {% assign m = page.date | date: "%-m" %}
+      {{ page.date | date: "%-d" }}
+        {% case m %}
+          {% when '1' %}janvier
+          {% when '2' %}février
+          {% when '3' %}mars
+          {% when '4' %}avril
+          {% when '5' %}mai
+          {% when '6' %}juin
+          {% when '7' %}juillet
+          {% when '8' %}aout
+          {% when '9' %}septembre
+          {% when '10' %}octobre
+          {% when '11' %}novembre
+          {% when '12' %}décembre
+        {% endcase %}
+        {{ page.date | date: "%Y" }}
+      </p>
+    </div><!--article-header-->
+
+    <article>
+      <div class="post-content">
+          <img src="{{ page.image }}"/>
+          {{ content }}
+      </div>
+
+      <ul class="post-list">
+          <h3>Actualité</h3>
+          {% for post in site.posts limit: 10 %}
+          <li>
+              <a href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+          </li>
+          {% endfor %}
+    </ul><!--post-list-->
+
+    </article>
+
+</div><!--post-wrapper-->

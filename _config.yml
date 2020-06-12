@@ -1,5 +1,5 @@
 ---
-title: Journaltest
+title: Memoirs
 timezone: UTC
 collections:
   posts:
@@ -8,3 +8,12 @@ collections:
   uploads:
     title: Uploads
     output: true
+email: your-email@example.com
+description: 'Votre source de nouvelles par excellence !
+
+'
+baseurl: 
+url: http://www.lejournallenord.com/
+twitter_username: jekyllrb
+github_username: jekyll
+markdown: kramdown
